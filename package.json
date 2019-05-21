@@ -21,6 +21,7 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "serve-favicon": "^2.5.0",
+    "cfenv": "^1.2.2",
     "strong-error-handler": "^3.2.0"
   },
   "devDependencies": {},
