@@ -54,8 +54,10 @@ var Toolchain = appEnv.app.application_name.split("-")[2];
 
 if (Toolchain == undefined) {
     var mongoURL = Mongo.concat(Domein, path);
+    console.log('undefined' + mongoURL)
 } else {
     var mongoURL = Mongo.concat(Toolchain, Domein, path);
+    console.log('not undefined' + mongoURL)
 }
 app.listen(serverPort, function () {
     console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
