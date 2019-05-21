@@ -1,7 +1,7 @@
 {
   "name": "finished",
   "version": "1.0.0",
-  "main": "./MongoAPI-postpostgetsend.js",
+  "main": "./MongoHandler.js",
   "engines": {
     "node": ">=8"
   },
