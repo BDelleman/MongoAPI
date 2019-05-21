@@ -6,7 +6,7 @@
     "node": ">=8"
   },
   "scripts": {
-    "start": "node ."  
+    "start": "node ."
   },
   "dependencies": {
     "body-parser": "^1.18.3",
