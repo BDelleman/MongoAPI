@@ -1,5 +1,6 @@
 ---
 applications:
  - name: MongoAPIv2
-   random-route: true
+   routes:
+   - route: sad-tiger.eu-gb.mybluemix.net
    memory: 256M
