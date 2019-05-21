@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 var app = express();
 var mongoURL = "https://happy-pinguin.eu-gb.mybluemix.net/api/Images"; // restApiRoot (/api), localhost and port from config.json (talentimage/Mongodb/ServerMongoFoto/server/)
 var serverPort = process.env.PORT || 4000;
+var cfenv = require("cfenv");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -50,8 +51,12 @@ const Mongo = "'https://Mongo-Server-watson-";
 const Domein = ".eu-gb.mybluemix.net";
 const path  = "/api/Images"
 var Toolchain = appEnv.app.application_name.split("-")[2];
-var mongoURL = Mongo.concat(Toolchain,Domein,path);
 
+if (Toolchain == undefined) {
+    var mongoURL = Mongo.concat(Domein, path);
+} else {
+    var mongoURL = Mongo.concat(Toolchain, Domein, path);
+}
 app.listen(serverPort, function () {
     console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
 });
