@@ -2,5 +2,5 @@
 applications:
  - name: MongoAPI
    random-route: true
-   buildpack: sdk-for-nodejs
+   buildpacks: sdk-for-nodejs
    memory: 256M
