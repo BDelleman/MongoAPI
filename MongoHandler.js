@@ -45,6 +45,13 @@ app.post('/post', function (req, res) {
     Response = Controller(mongo, mongoclass, res);
 });
 
+var appEnv = cfenv.getAppEnv(); //build URL after being assigned a Route.
+const Mongo = "'https://Mongo-Server-watson-";
+const Domein = ".eu-gb.mybluemix.net";
+const path  = "/api/Images"
+var Toolchain = appEnv.app.application_name.split("-")[2];
+var mongoURL = Mongo.concat(Toolchain,Domein,path);
+
 app.listen(serverPort, function () {
     console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
 });
