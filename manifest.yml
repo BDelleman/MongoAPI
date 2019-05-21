@@ -1,7 +1,6 @@
 ---
 applications:
- - name: MongoAPIv2
-   routes:
-   - route: sad-tiger.eu-gb.mybluemix.net
+ - name: MongoAPI
+   random-route: true
    buildpack: sdk-for-nodejs
    memory: 256M
