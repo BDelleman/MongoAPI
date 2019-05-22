@@ -1,5 +1,5 @@
 {
-  "name": "finished",
+  "name": "mongoapi",
   "version": "1.0.0",
   "main": "./MongoHandler.js",
   "engines": {
@@ -21,7 +21,7 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "serve-favicon": "^2.5.0",
-    "cfenv": "^1.2.2",
+    "cfenv": "drnic/node-cfenv#typescript",
     "strong-error-handler": "^3.2.0"
   },
   "devDependencies": {},
