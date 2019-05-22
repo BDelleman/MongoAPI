@@ -29,7 +29,7 @@ async function Controller(Obj, Class, res) {
         if (error) {
             return console.dir(error);
         }
-        console.log("body to be added to Response.Image "body)
+        console.log("body to be added to Response.Image "  + body)
         Response.Image = JSON.parse(body);
         
     })
