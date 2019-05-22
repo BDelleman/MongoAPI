@@ -6,7 +6,9 @@ var app = express();
 var serverPort = process.env.PORT || 4000;
 var cfenv = require("cfenv");
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(bodyParser.json());
 
 function MaakderWatMooisVan(ObjectMongoCount, Class, error) {
@@ -22,16 +24,18 @@ function MaakderWatMooisVan(ObjectMongoCount, Class, error) {
 //kijken of het werkt
 async function Controller(Obj, Class, res) {
     await Request.post({
-        "headers": { "content-type": "application/json" },
+        "headers": {
+            "content-type": "application/json"
+        },
         "url": mongoURL,
         "body": JSON.stringify(Obj)
     }, (error, response, body) => {
         if (error) {
             return console.dir(error);
         }
-        console.log("body to be added to Response.Image "  + body)
+        console.log("body to be added to Response.Image " + body)
         Response.Image = JSON.parse(body);
-        
+
     })
 
     let CountObject = await Request.get(mongoURL);
@@ -51,16 +55,16 @@ app.post('/post', function (req, res) {
 var appEnv = cfenv.getAppEnv(); //build URL after being assigned a Route.
 const Mongo = "https://Mongo-Server-watson-";
 const Domein = ".eu-gb.mybluemix.net";
-const path  = "/api/Images"
-var Toolchain = appEnv.app.application_name.split("-")[3];
+const path = "/api/Images"
+var Toolchainname = appEnv.app.application_name.split("-")[2];
+var Toolchaintype = appEnv.app.application_name.split("-")[3]; // selfreferences Mongo API
 
 if (Toolchain == undefined) {
-    var mongoURL = Mongo.concat(Domein, path);
-    console.log('undefined' + mongoURL)
+    var mongoURL = Mongo.concat(Domein, path, Toolchainname);
 } else {
-    var mongoURL = Mongo.concat(Toolchain, Domein, path);
-    console.log('not undefined' + mongoURL)
+    var mongoURL = Mongo.concat(Toolchainname, "-", Toolchaintype, Domein, path);
 }
+
 app.listen(serverPort, function () {
     console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
 });
