@@ -53,7 +53,7 @@ app.post('/post', function (req, res) {
 });
 
 var appEnv = cfenv.getAppEnv(); //build URL after being assigned a Route.
-const Mongo = "https://Mongo-Server-watson-";
+const Mongo = "https://Mongo-Server-";
 const Domein = ".eu-gb.mybluemix.net";
 const path = "/api/Images"
 var Toolchainname = appEnv.app.application_name.split("-")[2];
