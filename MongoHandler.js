@@ -59,8 +59,8 @@ const path = "/api/Images"
 var Toolchainname = appEnv.app.application_name.split("-")[2];
 var Toolchaintype = appEnv.app.application_name.split("-")[3]; // selfreferences Mongo API
 
-if (Toolchain == undefined) {
-    var mongoURL = Mongo.concat(Domein, path, Toolchainname);
+if (Toolchaintype == undefined) {
+    var mongoURL = Mongo.concat(Toolchainname, Domein, path);
 } else {
     var mongoURL = Mongo.concat(Toolchainname, "-", Toolchaintype, Domein, path);
 }
