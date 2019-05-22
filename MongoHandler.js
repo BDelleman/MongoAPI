@@ -52,7 +52,7 @@ var appEnv = cfenv.getAppEnv(); //build URL after being assigned a Route.
 const Mongo = "https://Mongo-Server-watson-";
 const Domein = ".eu-gb.mybluemix.net";
 const path  = "/api/Images"
-var Toolchain = appEnv.app.application_name.split("-")[2];
+var Toolchain = appEnv.app.application_name.split("-")[3];
 
 if (Toolchain == undefined) {
     var mongoURL = Mongo.concat(Domein, path);
