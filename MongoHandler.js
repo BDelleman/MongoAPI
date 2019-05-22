@@ -21,7 +21,7 @@ function MaakderWatMooisVan(ObjectMongoCount, Class, error) {
 }
 //kijken of het werkt
 async function Controller(Obj, Class, res) {
-    let Inputresult = await Request.post({
+    await Request.post({
         "headers": { "content-type": "application/json" },
         "url": mongoURL,
         "body": JSON.stringify(Obj)
